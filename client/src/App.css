@@ -1,42 +1,104 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* TaskManager.css */
+.task-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0b0611, #0541a8);
+  padding: 20px;
+}
+
+.task-card {
+  width: 100%;
+  max-width: 500px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.task-title {
+  font-size: 24px;
+  font-weight: bold;
   text-align: center;
+  color: #fff;
+  margin-bottom: 15px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.task-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.task-input::placeholder {
+  color: #ddd;
 }
 
-.card {
-  padding: 2em;
+.task-button {
+  width: 100%;
+  padding: 10px;
+  background: #000000;
+  color: white;
+  border: none;
+  font-weight: bolder;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-.read-the-docs {
-  color: #888;
+.task-button:hover {
+  backdrop-filter: blur(10px); /* Blurs the background */
+    background: rgba(255, 255, 255, 0.514); /* Slightly more opaque */
+    transform: scale(1.02); /* Optional: Slight zoom effect */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.808); 
+  font-weight: bolder;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+.task-item {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.task-delete {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  background: #ff0000;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.fa-trash{
+  font-size: 2px;
+
+}
+
+.task-delete:hover {
+  background: #c0392b;
+  transform: scale(1.05);
 }

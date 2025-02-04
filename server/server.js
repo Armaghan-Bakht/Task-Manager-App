@@ -13,6 +13,10 @@ mongoose.connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopol
  .then(() => console.log('MongoDB connected'))
  .catch(err => console.log(err));
 // Routes
+app.get("/", (req , res)=>{
+    res.send("Hello!! The backend is running.....🎉🎉")
+})
+
 app.use('/api/tasks', taskRoutes);
 // Start server
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

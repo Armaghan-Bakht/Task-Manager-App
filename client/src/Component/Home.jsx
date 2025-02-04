@@ -9,13 +9,13 @@ const Home = () => {
     const [newTask, setNewTask] = useState({ title: '', description: '' });
     // Fetch tasks from the backend
     useEffect(() => {
-        axios.get('http://localhost:5000/api/tasks')
+        axios.get('https://task-manager-app-indol.vercel.app/api/tasks')
             .then(response => setTasks(response.data))
             .catch(err => console.log(err));
     }, []);
     // Add a new task
     const addTask = () => {
-        axios.post('http://localhost:5000/api/tasks', newTask)
+        axios.post('https://task-manager-app-indol.vercel.app/api/tasks', newTask)
             .then(response => {
                 setTasks([...tasks, response.data]);
                 setNewTask({ title: '', description: '' });
@@ -24,7 +24,7 @@ const Home = () => {
     };
     // Delete a task
     const deleteTask = (id) => {
-        axios.delete(`http://localhost:5000/api/tasks/${id}`)
+        axios.delete(`https://task-manager-app-indol.vercel.app/api/tasks/${id}`)
             .then(() => setTasks(tasks.filter(task => task._id !== id)))
             .catch(err => console.log(err));
     };
